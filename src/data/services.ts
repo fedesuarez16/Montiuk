@@ -24,7 +24,7 @@ export const services: Service[] = [
     summary:
       "Servicio integral desde el retiro hasta la disposición final, con cumplimiento normativo, trazabilidad y respaldo ambiental. Incluye retiro logístico con transportistas habilitados, documentación alineada con APRA y SLUE, reportes mensuales y programa sustentable más allá del cumplimiento.",
     image: {
-      src: "/hero1.png",
+      src: "/hero2.jpeg",
       alt: "Gestión y control de residuos industriales",
     },
   },
@@ -34,7 +34,7 @@ export const services: Service[] = [
     summary:
       "Incorporamos la sostenibilidad como eje estratégico con enfoque ESG y Agenda 2030: estrategias, gestión ambiental integral, reportes y mejora continua. Estudios y análisis ambientales (EIA, DJ, NCA, efluentes, emisiones, pasivos) para optimizar procesos y reducir riesgos.",
     image: {
-      src: "/hero3.jpeg",
+      src: "/hero8.png",
       alt: "Sostenibilidad y desempeño ambiental",
     },
   },
@@ -44,7 +44,7 @@ export const services: Service[] = [
     summary:
       "Asesoramiento en prevención de riesgos, cumplimiento normativo y mejora de condiciones de trabajo: matriz de riesgos, capacitaciones, estudios de ruido e iluminación, ergonomía, planos de evacuación, investigación de accidentes y asesoramiento técnico mensual.",
     image: {
-      src: "/hero2.jpeg",
+      src: "/hero3.jpeg",
       alt: "Seguridad e higiene en el trabajo",
     },
   },

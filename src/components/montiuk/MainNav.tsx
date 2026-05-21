@@ -58,7 +58,7 @@ export function MainNav({ backLink, simplifyMobile }: MainNavProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-emerald-300"
             >
               {item.label}
             </Link>
@@ -77,7 +77,7 @@ export function MainNav({ backLink, simplifyMobile }: MainNavProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="shrink-0 rounded-full border border-white/30 px-2.5 py-1 text-[11px] font-medium text-white sm:px-3 sm:py-1.5 sm:text-xs"
+                className="shrink-0 rounded-full border border-white/30 px-2.5 py-1 text-[11px] font-medium text-white transition hover:border-emerald-400/50 hover:text-emerald-200 sm:px-3 sm:py-1.5 sm:text-xs"
               >
                 {item.label}
               </Link>

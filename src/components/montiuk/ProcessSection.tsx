@@ -40,6 +40,7 @@ export function ProcessSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
+          <p className="font-detail italic text-emerald-600 mb-3 text-base">Lo que hacemos</p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Servicios
           </h2>
@@ -50,11 +51,11 @@ export function ProcessSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
           {services.map((item) => (
             <article
               key={item.slug}
-              className="group relative h-[280px] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/10 transition-shadow duration-300 hover:shadow-xl sm:h-[340px] md:h-[380px] lg:h-[400px]"
+              className="group relative h-[280px] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 sm:h-[340px] md:h-[380px] lg:h-[400px]"
             >
               <Image
                 src={item.image.src}
@@ -74,23 +75,22 @@ export function ProcessSection() {
 
               <Link
                 href={`/servicios/${item.slug}`}
-                className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/15 text-white shadow-md backdrop-blur-sm transition hover:bg-white/25"
-                aria-label={`Ir a ${item.title}`}
+                className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 shadow-md backdrop-blur-sm transition"
               >
                 <ChevronRight className="shrink-0" />
               </Link>
 
-              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end p-3 pt-16 sm:p-4 sm:pt-20 md:p-5">
-                <h3 className="text-base font-bold leading-snug text-white sm:text-lg md:text-xl">
+              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col justify-end p-4 pt-20 sm:p-5">
+                <h3 className="text-lg font-bold leading-snug text-white">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 line-clamp-3 text-xs leading-relaxed text-white/90 sm:mt-2 sm:line-clamp-4 sm:text-sm">
+                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-white/90">
                   {clampWords(item.summary, 28)}
                 </p>
-                <div className="mt-3 sm:mt-4">
+                <div className="mt-4">
                   <Link
                     href={`/servicios/${item.slug}`}
-                    className="flex w-full items-center justify-between gap-2 rounded-lg border border-white/35 bg-black/40 px-2.5 py-2 text-left text-xs font-medium text-white backdrop-blur-md transition hover:bg-black/55 sm:px-4 sm:py-2.5 sm:text-sm"
+                    className="flex w-full items-center justify-between gap-2 rounded-lg border border-emerald-400/30 bg-emerald-500/10 text-emerald-300 px-3 py-2 text-sm font-medium backdrop-blur-sm hover:bg-emerald-500/20"
                   >
                     Ver servicio
                     <ChevronRight className="shrink-0 opacity-90" />

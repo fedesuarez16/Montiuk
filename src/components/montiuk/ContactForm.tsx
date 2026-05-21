@@ -50,7 +50,7 @@ export function ContactForm() {
             required
             autoComplete="name"
             placeholder="Nombre y apellido *"
-            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-emerald-400/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
           />
         </div>
         <div>
@@ -64,7 +64,7 @@ export function ContactForm() {
             required
             autoComplete="email"
             placeholder="Correo electrónico *"
-            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-emerald-400/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
           />
         </div>
         <div>
@@ -77,7 +77,7 @@ export function ContactForm() {
             type="tel"
             autoComplete="tel"
             placeholder="Teléfono (opcional)"
-            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-emerald-400/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
           />
         </div>
         <div>
@@ -90,14 +90,14 @@ export function ContactForm() {
             required
             rows={4}
             placeholder="¿En qué podemos ayudarte? *"
-            className="w-full resize-y rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="w-full resize-y rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-emerald-400/60 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
           />
         </div>
         <button
           type="submit"
           className="w-full rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-white/90"
         >
-          Abrir correo y enviar
+          Enviar
         </button>
       </form>
       {status === "sent" ? (

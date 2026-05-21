@@ -11,12 +11,13 @@ export function AboutSection() {
       id="nosotros"
       className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
     >
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
+        <div className="flex flex-col">
+          <p className="font-detail italic text-emerald-600 mb-3 text-base">Quiénes somos</p>
+          <h2 className="text-4xl font-bold tracking-tighter text-slate-900 md:text-5xl">
             Sobre MONTIUK
           </h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
+          <div className="mt-6 space-y-6 text-lg leading-relaxed text-slate-600">
             <p>
               En MONTIUK acompañamos a las organizaciones en la integración de
               la sostenibilidad dentro de su estrategia de negocio, alineando
@@ -36,14 +37,14 @@ export function AboutSection() {
             </p>
           </div>
         </div>
-        <div>
-          <div className="grid grid-cols-2 gap-6 sm:gap-8">
+        <div className="flex items-center lg:min-h-0 lg:h-full">
+          <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm"
+                className="flex min-h-[8.5rem] flex-col justify-center rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-colors hover:border-emerald-200 sm:min-h-0 lg:h-full lg:min-h-0"
               >
-                <p className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                <p className="font-detail text-2xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
                   {s.value}
                 </p>
                 <p className="mt-2 text-sm leading-snug text-slate-500">

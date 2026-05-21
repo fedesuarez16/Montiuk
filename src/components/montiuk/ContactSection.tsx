@@ -25,7 +25,8 @@ export function ContactSection() {
                     className="h-12 w-auto brightness-0 invert sm:h-14"
                   />
                 </Link>
-                <h2 className="mt-6 text-3xl font-bold tracking-tight md:text-4xl">
+                <p className="font-detail mt-6 italic text-emerald-400 text-base">Hablemos</p>
+                <h2 className="mt-2 text-4xl font-bold tracking-tighter md:text-5xl">
                   Contacto
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-white/80">

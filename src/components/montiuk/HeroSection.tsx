@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainNav } from "@/components/montiuk/MainNav";
 
-function IconRecycle({ className }: { className?: string }) {
+function IconResiduos({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -17,7 +17,7 @@ function IconRecycle({ className }: { className?: string }) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m-9.241-9.24h4.992v-.001M12 12a3 3 0 113 3m-4.97 4.97l-3-3m3 3l3-3"
+        d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
       />
     </svg>
   );
@@ -89,7 +89,7 @@ const heroServices = [
   {
     href: "/servicios/gestion-residuos",
     label: "Residuos",
-    Icon: IconRecycle,
+    Icon: IconResiduos,
   },
   { href: "/servicios/sostenibilidad", label: "Ambiente", Icon: IconLeaf },
   {
@@ -112,7 +112,7 @@ const slides = [
   },
   {
     title: "Control total de tus residuos industriales",
-    image: "/hero1.png",
+    image: "/hero8.png",
     alt: "Residuos industriales bajo control",
   },
   {
@@ -158,62 +158,52 @@ export function HeroSection() {
         </div>
 
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/50"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-slate-900/95 via-slate-900/65 to-slate-900/20"
           aria-hidden
         />
 
         <MainNav />
 
+        {/* Slide indicator dots */}
+        <div className="pointer-events-auto absolute bottom-6 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Ir a slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === index
+                  ? "w-6 bg-emerald-400"
+                  : "w-2 bg-white/40 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+
         <div className="pointer-events-none absolute inset-0 z-[2] flex flex-col justify-end px-4 pb-8 pt-8 md:px-8 md:pb-12 md:pt-12 lg:px-52 lg:pb-32 lg:pt-14">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+          <p className="font-detail italic mb-2 text-sm tracking-wide text-emerald-300">
             Montiuk consultora
           </p>
           <h1
             key={slides[index].title}
-            className="max-w-2xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="max-w-2xl text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-5xl lg:text-5xl"
           >
             {slides[index].title}
           </h1>
 
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 md:text-md">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90">
             En MONTIUK acompañamos a las organizaciones en la integración de la
             sostenibilidad dentro de su estrategia de negocio, alineando
             operación, cumplimiento normativo y criterios ESG.
           </p>
-          
-          <nav
-            aria-label="Servicios destacados"
-            className="pointer-events-auto mt-8 mb-2 flex w-full max-w-xl flex-wrap gap-2 sm:flex-nowrap sm:gap-4"
-          >
-            {heroServices.map(({ href, label, Icon }) => (
-              <a
-                key={href}
-                href={href}
-                className="flex min-w-0 flex-1 basis-[calc(50%-0.375rem)] flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-3 text-center text-white/95 transition hover:border-white/35 hover:bg-white/10 sm:basis-0 sm:px-4"
-              >
-                <Icon className="h-7 w-7 shrink-0 text-white sm:h-8 sm:w-8" />
-                <span className="text-[11px] font-semibold leading-tight sm:text-xs">
-                  {label}
-                </span>
-              </a>
-            ))}
-          </nav>
 
-
-          
-          <div className="pointer-events-auto mt-6 flex flex-wrap gap-3 sm:mt-8">
-            <a
-              href="#servicios"
-              className="inline-flex items-center justify-center rounded-md hover:border-b  border-white/40 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:border-white/60"
-            >
-              Ver servicios
-              
-            </a>
+          <div className="pointer-events-auto mt-8">
             <a
               href="#contacto"
-              className="inline-flex items-center justify-center rounded-md hover:border-b border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/95 backdrop-blur-sm transition hover:border-emerald-400/60 hover:bg-white/10"
             >
-              Coordinar una reunión
+              Solicitar presupuesto
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="ml-2 size-5 shrink-0"
@@ -224,7 +214,7 @@ export function HeroSection() {
                 aria-hidden
               >
                 <path
-                  stroke="#fff"
+                  stroke="currentColor"
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -233,9 +223,24 @@ export function HeroSection() {
               </svg>
             </a>
           </div>
-   
-        
-       
+
+          <nav
+            aria-label="Servicios destacados"
+            className="pointer-events-auto mt-6 mb-2 flex w-full max-w-xl flex-wrap gap-2 sm:flex-nowrap sm:gap-4"
+          >
+            {heroServices.map(({ href, label, Icon }) => (
+              <a
+                key={href}
+                href={href}
+                className="flex min-w-0 flex-1 basis-[calc(50%-0.375rem)] flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-3 text-center text-white/95 backdrop-blur-sm transition hover:border-emerald-400/60 hover:bg-white/10 sm:basis-0 sm:px-4"
+              >
+                <Icon className="h-7 w-7 shrink-0 text-white sm:h-8 sm:w-8" />
+                <span className="text-[11px] font-semibold leading-tight sm:text-xs">
+                  {label}
+                </span>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </section>

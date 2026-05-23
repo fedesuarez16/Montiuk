@@ -51,18 +51,18 @@ export function ProcessSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
           {services.map((item) => (
             <article
               key={item.slug}
-              className="group relative h-[280px] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 sm:h-[340px] md:h-[380px] lg:h-[400px]"
+              className="group relative h-[280px] w-full overflow-hidden rounded-2xl border border-transparent shadow-lg ring-1 ring-black/10 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 sm:h-[340px] md:h-[380px] lg:h-[400px]"
             >
               <Image
                 src={item.image.src}
                 alt={item.image.alt}
                 fill
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <div
                 className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/45 to-black/25"
@@ -84,6 +84,7 @@ export function ProcessSection() {
                 <h3 className="text-lg font-bold leading-snug text-white">
                   {item.title}
                 </h3>
+                <span className="mt-3 block h-1 w-8 rounded-full bg-emerald-400" aria-hidden />
                 <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-white/90">
                   {clampWords(item.summary, 28)}
                 </p>

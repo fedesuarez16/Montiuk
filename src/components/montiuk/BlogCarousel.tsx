@@ -30,19 +30,24 @@ export function BlogCarousel() {
           >
             <Link href={`/blog/${post.slug}`} className="group block h-full">
               <BlogCover post={post} variant="card" />
-              <time
-                dateTime={post.dateISO}
-                className="font-detail mt-3 block text-xs italic text-slate-500"
-              >
-                {post.date}
-              </time>
-              <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900 group-hover:text-blue-700">
+              <div className="mt-3 flex items-center gap-2">
+                <span className="font-detail inline-block rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-600">
+                  {post.category}
+                </span>
+                <time
+                  dateTime={post.dateISO}
+                  className="font-detail block text-xs italic text-slate-500"
+                >
+                  {post.date}
+                </time>
+              </div>
+              <h3 className="mt-1 text-lg font-semibold leading-snug text-slate-900 group-hover:text-emerald-700">
                 {post.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {post.excerpt}
               </p>
-              <span className="mt-2 inline-block text-sm font-medium text-blue-700 group-hover:underline">
+              <span className="mt-2 inline-block text-sm font-medium text-emerald-600 group-hover:underline">
                 Leer artículo
               </span>
             </Link>
@@ -54,7 +59,7 @@ export function BlogCarousel() {
           type="button"
           aria-label="Anterior"
           onClick={() => scrollByDir(-1)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700"
         >
           ←
         </button>
@@ -62,7 +67,7 @@ export function BlogCarousel() {
           type="button"
           aria-label="Siguiente"
           onClick={() => scrollByDir(1)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700"
         >
           →
         </button>

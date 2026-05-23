@@ -61,7 +61,7 @@ function IconShield({ className }: { className?: string }) {
   );
 }
 
-function IconCog({ className }: { className?: string }) {
+function IconFireDoor({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -74,12 +74,18 @@ function IconCog({ className }: { className?: string }) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+        d="M4.5 4.5h7.5A1.5 1.5 0 0 1 13.5 6v12a1.5 1.5 0 0 1-1.5 1.5H4.5V4.5Z"
+      />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 6v10.5" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7.125 11.25h.007v.008h-.007v-.008Z"
       />
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+        d="M15.75 8.25c.75 1.875.75 3.75.75 5.25s0 3.375-.75 5.25c.75-1.5 1.5-3 2.25-5.25 0-2.25-1.125-3.75-2.25-5.25.75-1.125 1.5-2.25 1.5-3.75 0 1.875-.75 3.375-1.5 5.25Z"
       />
     </svg>
   );
@@ -99,8 +105,8 @@ const heroServices = [
   },
   {
     href: "/servicios/equipamiento-industrial",
-    label: "Industrial",
-    Icon: IconCog,
+    label: "Puertas cortafuego",
+    Icon: IconFireDoor,
   },
 ] as const;
 
@@ -129,12 +135,18 @@ const slides = [
 
 export function HeroSection() {
   const [index, setIndex] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
     }, 3000);
     return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setLoaded(true));
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
@@ -182,26 +194,52 @@ export function HeroSection() {
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] flex flex-col justify-end px-4 pb-8 pt-8 md:px-8 md:pb-12 md:pt-12 lg:px-52 lg:pb-32 lg:pt-14">
-          <p className="font-detail italic mb-2 text-sm tracking-wide text-emerald-300">
+          <p
+            className="font-detail italic mb-2 text-sm tracking-wide text-emerald-300 transition-all duration-700 ease-out"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? "translateY(0)" : "translateY(12px)",
+              transitionDelay: "0ms",
+            }}
+          >
             Montiuk consultora
           </p>
           <h1
             key={slides[index].title}
-            className="max-w-2xl text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-5xl lg:text-5xl"
+            className="max-w-2xl text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-5xl lg:text-5xl transition-all duration-700 ease-out"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? "translateY(0)" : "translateY(16px)",
+              transitionDelay: "150ms",
+            }}
           >
             {slides[index].title}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90">
+          <p
+            className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 transition-all duration-700 ease-out"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? "translateY(0)" : "translateY(16px)",
+              transitionDelay: "300ms",
+            }}
+          >
             En MONTIUK acompañamos a las organizaciones en la integración de la
             sostenibilidad dentro de su estrategia de negocio, alineando
             operación, cumplimiento normativo y criterios ESG.
           </p>
 
-          <div className="pointer-events-auto mt-8">
+          <div
+            className="pointer-events-auto mt-8 transition-all duration-700 ease-out"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? "translateY(0)" : "translateY(16px)",
+              transitionDelay: "480ms",
+            }}
+          >
             <a
               href="#contacto"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/95 backdrop-blur-sm transition hover:border-emerald-400/60 hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-500/15 px-6 py-3 text-sm font-semibold text-emerald-300 backdrop-blur-sm transition hover:border-emerald-400/50 hover:bg-emerald-500/25"
             >
               Solicitar presupuesto
               <svg
@@ -228,11 +266,17 @@ export function HeroSection() {
             aria-label="Servicios destacados"
             className="pointer-events-auto mt-6 mb-2 flex w-full max-w-xl flex-wrap gap-2 sm:flex-nowrap sm:gap-4"
           >
-            {heroServices.map(({ href, label, Icon }) => (
+            {heroServices.map(({ href, label, Icon }, i) => (
               <a
                 key={href}
                 href={href}
                 className="flex min-w-0 flex-1 basis-[calc(50%-0.375rem)] flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-3 text-center text-white/95 backdrop-blur-sm transition hover:border-emerald-400/60 hover:bg-white/10 sm:basis-0 sm:px-4"
+                style={{
+                  opacity: loaded ? 1 : 0,
+                  transform: loaded ? "translateY(0)" : "translateY(16px)",
+                  transition: "opacity 600ms ease-out, transform 600ms ease-out",
+                  transitionDelay: `${640 + i * 80}ms`,
+                }}
               >
                 <Icon className="h-7 w-7 shrink-0 text-white sm:h-8 sm:w-8" />
                 <span className="text-[11px] font-semibold leading-tight sm:text-xs">

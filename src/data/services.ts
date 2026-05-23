@@ -50,7 +50,7 @@ export const services: Service[] = [
   },
   {
     slug: "equipamiento-industrial",
-    title: "Soluciones y equipamiento industrial",
+    title: "Puertas cortafuego",
     summary:
       "Comercialización e instalación de equipamiento orientado a seguridad y funcionalidad: puertas de emergencia, cortafuego certificadas por INTI, barrales antipánico y portones industriales. Productos certificados y distribución en todo el país.",
     image: {

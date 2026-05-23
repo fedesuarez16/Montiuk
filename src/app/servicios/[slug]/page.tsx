@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactSection } from "@/components/montiuk/ContactSection";
 import { MainNav } from "@/components/montiuk/MainNav";

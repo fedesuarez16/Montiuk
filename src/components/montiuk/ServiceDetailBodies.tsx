@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { PuertasGalleryCarousel } from "@/components/montiuk/PuertasGalleryCarousel";
 import type { ServiceSlug } from "@/data/services";
 
 function BulletList({ items }: { items: string[] }) {
@@ -162,6 +163,7 @@ export function EquipamientoIndustrialBody() {
           "Portones corredizos industriales",
         ]}
       />
+      <PuertasGalleryCarousel />
       <p className="mt-4">
         Trabajamos con productos certificados y de alta calidad, brindando
         soluciones adaptadas a cada necesidad y cumpliendo con las normativas

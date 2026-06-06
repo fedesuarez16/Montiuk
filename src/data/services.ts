@@ -20,9 +20,9 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "gestion-residuos",
-    title: "Gestión integral de residuos",
+    title: "Gestión estratégica de residuos",
     summary:
-      "Servicio integral desde el retiro hasta la disposición final, con cumplimiento normativo, trazabilidad y respaldo ambiental. Incluye retiro logístico con transportistas habilitados, documentación alineada con APRA y SLUE, reportes mensuales y programa sustentable más allá del cumplimiento.",
+      "Transformamos los residuos en oportunidades de mejora, ahorro y sostenibilidad.",
     image: {
       src: "/hero2.jpeg",
       alt: "Gestión y control de residuos industriales",

@@ -177,7 +177,7 @@ export function HeroSection() {
         <MainNav />
 
         {/* Slide indicator dots */}
-        <div className="pointer-events-auto absolute bottom-6 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-2">
+        <div className="pointer-events-auto absolute bottom-4 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-2 lg:bottom-6">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -193,17 +193,8 @@ export function HeroSection() {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-0 z-[2] flex flex-col justify-end px-4 pb-8 pt-8 md:px-8 md:pb-12 md:pt-12 lg:px-52 lg:pb-32 lg:pt-14">
-          <p
-            className="font-detail italic mb-2 text-sm tracking-wide text-emerald-300 transition-all duration-700 ease-out"
-            style={{
-              opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateY(0)" : "translateY(12px)",
-              transitionDelay: "0ms",
-            }}
-          >
-            Montiuk consultora
-          </p>
+        <div className="pointer-events-none absolute inset-0 z-[2] flex flex-col justify-end px-4 pb-12 pt-8 md:px-12 md:pb-16 md:pt-12 lg:px-20 lg:pb-20 lg:pt-28 xl:px-40 xl:pb-24">
+         
           <h1
             key={slides[index].title}
             className="max-w-2xl text-4xl font-bold leading-tight tracking-tighter text-white sm:text-5xl md:text-5xl lg:text-5xl transition-all duration-700 ease-out"

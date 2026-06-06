@@ -12,65 +12,60 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
+const gestionResiduosFeatures = [
+  {
+    title: "Economía Circular",
+    description:
+      "Identificamos oportunidades para recuperar materiales y reducir desperdicios.",
+  },
+  {
+    title: "Gestión basada en datos",
+    description:
+      "Transformamos la información de residuos en indicadores para la toma de decisiones.",
+  },
+  {
+    title: "Estrategia de sostenibilidad",
+    description:
+      "Integramos la gestión de residuos a los objetivos ambientales y ESG de la organización.",
+  },
+  {
+    title: "Cultura y compromiso",
+    description:
+      "Capacitamos equipos para fortalecer prácticas sostenibles en toda la empresa.",
+  },
+] as const;
+
 export function GestionResiduosBody() {
   return (
-    <div className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
-      <p>
-        Brindamos un servicio integral de gestión de residuos, abarcando desde
-        el retiro hasta su disposición final, garantizando cumplimiento
-        normativo, trazabilidad y respaldo ambiental. Nuestra propuesta se
-        estructura en cuatro ejes:
+    <div className="mt-4 leading-relaxed text-slate-600">
+      <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        Gestión estratégica de residuos
+      </h2>
+      <p className="mt-3 text-lg font-medium text-slate-700">
+        Transformamos los residuos en oportunidades de mejora, ahorro y
+        sostenibilidad.
       </p>
-      <h4 className="mt-6 font-semibold text-slate-900">A. Retiro logístico</h4>
-      <p className="mt-2">
-        Coordinamos retiros programados en tiempo y forma en plantas
-        industriales, comercios, clínicas y otros establecimientos. Trabajamos
-        exclusivamente con transportistas habilitados para residuos especiales y
-        no especiales, asegurando una operatoria segura y conforme a normativa.
+      <p className="mt-4 text-sm leading-relaxed md:text-base">
+        Acompañamos a las organizaciones en el diagnóstico, planificación y
+        mejora de su gestión de residuos, identificando oportunidades de
+        reducción, reutilización, recuperación y valorización de materiales.
+        Nuestro enfoque combina cumplimiento normativo, eficiencia operativa y
+        principios de economía circular para generar resultados medibles y
+        sostenibles.
       </p>
-      <h4 className="mt-6 font-semibold text-slate-900">
-        B. Trazabilidad ambiental
-      </h4>
-      <p className="mt-2">
-        Garantizamos la trazabilidad completa mediante un sistema documental
-        alineado con los requerimientos de organismos como APRA y sistemas
-        digitales como SLUE. Incluye:
-      </p>
-      <BulletList
-        items={[
-          "Remitos",
-          "Manifiestos",
-          "Certificados de disposición final",
-          "Consolidación mensual de documentación",
-        ]}
-      />
-      <h4 className="mt-6 font-semibold text-slate-900">
-        C. Respaldo técnico ambiental
-      </h4>
-      <p className="mt-2">
-        Entregamos reportes mensuales que permiten a la empresa tomar decisiones
-        basadas en datos:
-      </p>
-      <BulletList
-        items={[
-          "Clasificación de residuos por tipo de material",
-          "Indicadores de generación",
-          "Análisis de desempeño ambiental",
-          "Recomendaciones de mejora continua",
-          "Información base para reportes ESG",
-        ]}
-      />
-      <h4 className="mt-6 font-semibold text-slate-900">D. Programa sustentable</h4>
-      <p className="mt-2">
-        Desarrollamos e implementamos programas ambientales que van más allá del
-        cumplimiento normativo. Brindamos un programa que acompaña y certifica la
-        integralidad ambiental de los procesos. El programa promueve políticas
-        ambientales sostenibles, alineadas con estándares actuales de gestión
-        ambiental corporativa. No se limita al cumplimiento, sino que trabaja
-        sobre la calidad de la gestión, promoviendo una gestión eficiente de
-        residuos, reducción de impacto ambiental y fortalecimiento del
-        posicionamiento sostenible de la organización.
-      </p>
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        {gestionResiduosFeatures.map((f) => (
+          <div
+            key={f.title}
+            className="rounded-xl border border-slate-200 bg-slate-50 p-5"
+          >
+            <h3 className="font-semibold text-slate-900">{f.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              {f.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

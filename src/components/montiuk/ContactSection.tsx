@@ -68,6 +68,19 @@ export function ContactSection() {
                       </a>
                     </dd>
                   </div>
+                  <div>
+                    <dt className="font-semibold text-white/60">Instagram</dt>
+                    <dd className="mt-1">
+                      <a
+                        href="https://www.instagram.com/montiuk.seguridadindustrial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="break-all text-white underline-offset-4 hover:underline"
+                      >
+                        @montiuk.seguridadindustrial
+                      </a>
+                    </dd>
+                  </div>
                 </dl>
               </address>
             </div>
